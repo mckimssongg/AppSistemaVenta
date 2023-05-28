@@ -1,1 +1,45 @@
-<p>layout works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row >
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Mi sistema ventas</span>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 225px;">
+        <mat-nav-list>
+            <mat-list-item routerLink="/pages/dashboard" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">dashboard</mat-icon>                
+                <a mat-line>DashBoard</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/pages/usuarios" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">group</mat-icon>                
+                <a mat-line>Usarios</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/pages/venta" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">currency_exchange</mat-icon>                
+                <a mat-line>Venta</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/pages/productos" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">collections_bookmark</mat-icon>                
+                <a mat-line>Productos</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/pages/historial_venta" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">history</mat-icon>                
+                <a mat-line>Historial</a>
+            </mat-list-item>
+            <mat-list-item routerLink="/pages/reportes" style="padding-left: 12px;">
+                <mat-icon matListItemIcon style="margin-right: 12px;">receipt</mat-icon>                
+                <a mat-line>Reportes</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 90vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

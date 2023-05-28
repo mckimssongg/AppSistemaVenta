@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="body">
+    <mat-card class="loginCard">
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Iniciar sesión</h1>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content style="padding-bottom: 15px;">
+            <form [formGroup]="formLogin" (ngSubmit)="inciarSesion()">
+
+                <mat-form-field appearance="outline" class="full-width">
+
+                    <mat-label>Correo electrónico</mat-label>
+                    <input autocomplete="off" matInput formControlName="email" placeholder="Correo electrónico" >
+
+                </mat-form-field>
+          
+                <mat-form-field appearance="outline" class="full-width">
+
+                    <mat-label>Contraseña</mat-label>
+                    <input autocomplete="off" matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Contraseña" >
+                    <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                      <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="formLogin.invalid">Iniciar <mat-icon matSuffix>login</mat-icon></button>
+
+            </form>
+        </mat-card-content>
+        <mat-card-footer>
+            <mat-progress-bar *ngIf="mostrarLoading" mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</div>

@@ -1,0 +1,49 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .loginCard {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+
+  mat-card-title {
+    text-align: center;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-form-field input {
+    font-size: 16px;
+  }
+  
+  mat-card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+  }
+  
+  button[mat-raised-button] {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
